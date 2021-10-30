@@ -51,7 +51,8 @@ applications which will use gmmlib.
 
 %build
 %cmake \
-  -DRUN_TEST_SUITE:BOOL=False
+  -DRUN_TEST_SUITE:BOOL=False \
+  -DCMAKE_BUILD_TYPE=Release
 
 %make_build
 
