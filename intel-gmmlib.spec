@@ -4,28 +4,21 @@
 
 Name:           intel-gmmlib
 Version:        21.3.2
-Release:        %mkrel 1
+Release:        1
 Summary:        Intel Graphics Memory Management Library
 Group:          System/Kernel and hardware
 License:        MIT and BSD
 URL:            https://github.com/intel/gmmlib
-Source0:        %{url}/archive/%{name}-%{version}.tar.gz
-
-# This package relies on intel asm
-ExclusiveArch:  x86_64
+Source0:         https://github.com/intel/gmmlib/archive/%{version}/gmlib-%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
-BuildRequires:  gcc
-BuildRequires:  gcc-c++
 
 %description
 The Intel Graphics Memory Management Library provides device specific
 and buffer management for the Intel Graphics Compute Runtime for OpenCL
 and the Intel Media Driver for VAAPI.
 
-#main package (contains .so.[major]. only)
 %package -n     %{libname}
-#(!) summary for main lib RPM only
 Summary:        Intel Graphics Memory Management Library
 Group:          System/Libraries
 Provides:       %{name} = %{version}-%{release}
@@ -38,7 +31,6 @@ linked with gmmlib.
 Summary:        Headers for developing programs that will use gmmlib
 Group:          Development/C++
 Requires:       %{libname} = %{version}
-#(!) MANDATORY
 Provides:       %{name}-devel = %{version}-%{release}
 
 %description -n %{develname}
@@ -52,27 +44,17 @@ applications which will use gmmlib.
 %doc README.rst
 %{_includedir}/igdgmm
 %{_libdir}/libigdgmm.so
-# We don't use the static library
-%exclude %{_libdir}/libgmm_umd.a
 %{_libdir}/pkgconfig/igdgmm.pc
-
 
 %prep
 %autosetup -p1 -n gmmlib-intel-gmmlib-%{version}
-# Fix license perm
-chmod -x LICENSE.md README.rst
-# Fix source code perm
-find Source -name "*.cpp" -exec chmod -x {} ';'
-find Source -name "*.h" -exec chmod -x {} ';'
-
 
 %build
 %cmake \
   -DRUN_TEST_SUITE:BOOL=False
 
-%cmake_build
-
+%make_build
 
 %install
-%cmake_install
+%make_install -C build
 find %{buildroot} -name '*.la' -delete
