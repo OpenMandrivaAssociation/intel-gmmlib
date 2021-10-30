@@ -9,7 +9,7 @@ Summary:        Intel Graphics Memory Management Library
 Group:          System/Kernel and hardware
 License:        MIT and BSD
 URL:            https://github.com/intel/gmmlib
-Source0:         https://github.com/intel/gmmlib/archive/%{version}/gmlib-%{name}-%{version}.tar.gz
+Source0:         https://github.com/intel/gmmlib/archive/%{version}/gmmlib-%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
 
