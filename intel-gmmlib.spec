@@ -3,13 +3,13 @@
 %define develname %mklibname %{name} -d
 
 Name:           intel-gmmlib
-Version:        22.1.3
+Version:        22.1.4
 Release:        1
 Summary:        Intel Graphics Memory Management Library
 Group:          System/Kernel and hardware
 License:        MIT and BSD
 URL:            https://github.com/intel/gmmlib
-Source0:         https://github.com/intel/gmmlib/archive/%{version}/gmmlib-%{name}-%{version}.tar.gz
+Source0:        https://github.com/intel/gmmlib/archive/%{version}/gmmlib-%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
 
