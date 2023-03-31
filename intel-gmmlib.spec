@@ -4,7 +4,7 @@
 
 Name:           intel-gmmlib
 Version:        22.3.0
-Release:        1
+Release:        2
 Summary:        Intel Graphics Memory Management Library
 Group:          System/Kernel and hardware
 License:        MIT and BSD
