@@ -11,6 +11,7 @@ License:        MIT and BSD
 URL:            https://github.com/intel/gmmlib
 Source0:        https://github.com/intel/gmmlib/archive/%{version}/gmmlib-%{name}-%{version}.tar.gz
 
+BuildRequires:  make
 BuildRequires:  cmake
 
 %description
