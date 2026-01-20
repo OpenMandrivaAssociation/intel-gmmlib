@@ -3,7 +3,7 @@
 %define develname %mklibname %{name} -d
 
 Name:           intel-gmmlib
-Version:        22.8.2
+Version:        22.9.0
 Release:        1
 Summary:        Intel Graphics Memory Management Library
 Group:          System/Kernel and hardware
