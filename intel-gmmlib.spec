@@ -3,7 +3,7 @@
 %define develname %mklibname %{name} -d
 
 Name:           intel-gmmlib
-Version:        22.9.0
+Version:        22.10.0
 Release:        1
 Summary:        Intel Graphics Memory Management Library
 Group:          System/Kernel and hardware
@@ -48,7 +48,7 @@ applications which will use gmmlib.
 %{_libdir}/pkgconfig/igdgmm.pc
 
 %prep
-%autosetup -p1 -n gmmlib-intel-gmmlib-%{version}
+%autosetup -p1 -n gmmlib-intel-gmmlib-22.10.0
 
 %build
 %cmake \
